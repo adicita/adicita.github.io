@@ -1,1 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+    <title>iLoveSong Prompt Generator</title>
+    <style>
+        body {
+			background-color: #2A174A;
+			font-family: 'Roboto', sans-serif;
+			font-size: 16px; /* Base font size */
+			line-height: 1.5; /* Ensures good readability */			
+        }
+		main {
+			max-width: 800px; 
+            margin: 25px auto;
+			background-color: white;
+			padding: 25px;
+		}	
+		h1, h2, h3 {
+			font-family: 'Raleway', sans-serif;
+			font-weight: 700; /* Bold headings */
+		}
+
+		.subtitle{
+		font-family: 'Inter', sans-serif;
+		font-size: 16px; /* For very small text */
+		font-weight: 900; /* Medium or semi-bold for emphasis */
+		line-height: 1.2; /* Slightly tighter for compact text */
+		}
+		.highlight {
+		font-family: 'Inter', sans-serif;
+		font-size: 14px; /* For very small text */
+		font-weight: 200; /* Medium or semi-bold for emphasis */
+		line-height: 1.2; /* Slightly tighter for compact text */
+		}		
+		.left, .middle, .right {
+			width: 29%;
+			display: inline-block;
+			vertical-align: top; /* Align fieldsets by their top edges */
+		}
+		h1 {
+			text-align: center;
+			font-size: 60px;
+			line-height: 0.80;
+		}
+        h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+
+        }
+        .button-group {
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #FFC107;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        button:hover {
+            background-color: #C19303;
+			color: #ffffff;
+        }
+        input[type="text"] {
+            width: 32%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+			min-height: 50px;
+        }
+		.item-group{
+			margin-top:10px
+		}
+		.code-block {
+			width: 30%;
+			margin-top: 5px;
+			font-family: 'JetBrains Mono', monospace;
+			font-size: 12px; /* Adjust based on your design */
+			background-color: #f4f4f4; /* Optional: Add a light background for contrast */
+			color: maroon;
+			padding: 10px;
+			border-radius: 4px;
+			overflow-x: auto; /* For long lines of code */
+			word-wrap: break-word; /* Allow words to break and wrap to the next line */
+			white-space: pre-wrap; /* Preserve spaces and allow wrapping */
+			min-height: 50px;
+			
+		}		
+		.white-space{
+		display: block;
+		height: 20px;
+		}
+		
+    </style>
+</head>
+
+	<body>
+		<main>
+		<h1>ILOVESONG <br>PROMPT GENERATOR</h1>
+		<p>I created this page to help me in compiling iLoveSong prompts. <a href="https://ilovesong.ai/" target="_blanks">iLoveSong</a> is a site where we can create songs using the help of AI. The songs you create can have lyrics or just instrumentals. The form below makes it easy to create a prompt, just select the genre or style you want.</p>
+		<form id="itemForm">
+			<fieldset class="left">
+			<legend class="subtitle">STYLE</legend>
+			<label class="highlight"><em>Specific characteristics that define the sound or feel of the music.</em></label>
+			<div class="item-group">
+        <label><i>Danceable</i></label>
+        <label><input type="checkbox" value="Dance"> Dance</label>
+        <label><input type="checkbox" value="Festive"> Rock</label>
+        <label><input type="checkbox" value="Groovy"> Groovy</label>
+        <label><input type="checkbox" value="Mid-Tempo"> Mid-Tempo</label>
+        <label><input type="checkbox" value="Syncopated"> Syncopated</label>
+        <label><input type="checkbox" value="Tipsy"> Tipsy</label>     
+        <br><label><i>Dark</i></label>            
+        <label><input type="checkbox" value="Atmospheric"> Atmospheric</label>
+        <label><input type="checkbox" value="Cold"> Cold</label>
+        <label><input type="checkbox" value="Dark"> Dark</label>
+        <label><input type="checkbox" value="Doom"> Doom</label>
+        <label><input type="checkbox" value="Dramatic"> Dramatic</label>
+        <label><input type="checkbox" value="Sinister"> Sinister</label> 
+        <br><label><i>Eclectic</i></label>                  
+        <label><input type="checkbox" value="Adjunct"> Adjunct</label>
+        <label><input type="checkbox" value="Art"> Art</label>        
+        <label><input type="checkbox" value="Capricio"> Capricio</label>
+        <label><input type="checkbox" value="Mellfilous"> Mellfilous</label>
+        <label><input type="checkbox" value="Nü"> Nü</label>
+        <label><input type="checkbox" value="Progressive"> Progressive</label>
+        <label><input type="checkbox" value="Unusual"> Unusual</label>
+        <br><label><i>Emotion</i></label>        
+        <label><input type="checkbox" value="Anthemic"> Anthemic</label>         
+        <label><input type="checkbox" value="Emotional"> Emotional</label>
+        <label><input type="checkbox" value="Happy"> Happy</label>
+        <label><input type="checkbox" value="Jubilant"> Jubilant</label>
+        <label><input type="checkbox" value="Melancholy"> Melancholy</label>
+        <label><input type="checkbox" value="Sad"> Sad</label>
+        <br><label><i>Hard</i></label>        
+        <label><input type="checkbox" value="Aggressive"> Aggressive</label>         
+        <label><input type="checkbox" value="Banger"> Banger</label>
+        <label><input type="checkbox" value="Power"> Power</label>    
+        <label><input type="checkbox" value="Stadium"> Stadium</label>                      
+        <label><input type="checkbox" value="Stomp"> Stomp</label>
+        <br><label><i>Lyrical</i></label>        
+        <label><input type="checkbox" value="Broadway"> Broadway</label>
+        <label><input type="checkbox" value="Cabaret"> Cabaret</label>
+        <label><input type="checkbox" value="Lounge"> Lounge</label>
+        <label><input type="checkbox" value="Operatic"> Operatic</label>
+        <label><input type="checkbox" value="Storytelling"> Storytelling</label>         
+        <label><input type="checkbox" value="Torch-Lounge"> Torch-Lounge</label>
+        <label><input type="checkbox" value="Theatrical"> Theatrical</label>
+        <label><input type="checkbox" value="Troubadour"> Troubadour</label>
+        <label><input type="checkbox" value="Vegas"> Vegas</label>
+        <br><label><i>Magical</i></label>        
+        <label><input type="checkbox" value="Ethereal"> Ethereal</label>
+        <label><input type="checkbox" value="Majestic"> Majestic</label>         
+        <label><input type="checkbox" value="Mysteriuous"> Mysteriuous</label>
+        <br><label><i>Minimal</i></label>        
+        <label><input type="checkbox" value="Ambient"> Ambient</label>    
+        <label><input type="checkbox" value="Cinematic"> Cinematic</label>        
+        <label><input type="checkbox" value="Heat"> Heat</label>                           
+        <label><input type="checkbox" value="Minimal"> Minimal</label>
+        <label><input type="checkbox" value="Slow"> Slow</label>
+        <label><input type="checkbox" value="Sparse"> Sparse</label>
+        <br><label><i>Party</i></label>        
+        <label><input type="checkbox" value="German Schlager"> German Schlager</label>
+        <label><input type="checkbox" value="Glam"> Glam</label>
+        <label><input type="checkbox" value="Glitter"> Glitter</label>         
+        <label><input type="checkbox" value="Groovy"> Groovy</label>
+        <br><label><i>Soft</i></label>        
+        <label><input type="checkbox" value="Bedroom"> Bedroom</label>
+        <label><input type="checkbox" value="Chillwave"> Chillwave</label>
+        <label><input type="checkbox" value="Intimate"> Intimate</label>
+        <label><input type="checkbox" value="Sadcore"> Sadcore</label>
+        <br><label><i>Weird</i></label>        
+        <label><input type="checkbox" value="Carnival"> Carnival</label>         
+        <label><input type="checkbox" value="Distorted"> Distorted</label>
+        <label><input type="checkbox" value="Glitchy"> Glitchy</label>    
+        <label><input type="checkbox" value="Haunted"> Haunted</label>             
+        <label><input type="checkbox" value="Hollow"> Hollow</label>
+        <label><input type="checkbox" value="Musicbox"> Musicbox</label>
+        <br><label><i>World/Ethnic</i></label>        
+        <label><input type="checkbox" value="Arabian"> Arabian</label>
+        <label><input type="checkbox" value="Bangra"> Bangra</label>
+        <label><input type="checkbox" value="Calypso"> Calypso</label>
+        <label><input type="checkbox" value="Chalga"> Chalga</label>         
+        <label><input type="checkbox" value="Egyptian"> Egyptian</label>
+        <label><input type="checkbox" value="Hindustani"> Hindustani</label>
+        <label><input type="checkbox" value="Hōgaku"> Hōgaku</label>
+        <label><input type="checkbox" value="Jewish Music"> Jewish Music</label>
+        <label><input type="checkbox" value="Klezmer"> Klezmer</label>
+        <label><input type="checkbox" value="Matsuri"> Matsuri</label>         
+        <label><input type="checkbox" value="Middle East"> Middle East</label>
+        <label><input type="checkbox" value="Polka"> Polka</label>    
+        <label><input type="checkbox" value="Russian Navy Song"> Russian Navy Song</label>    
+        <label><input type="checkbox" value="Suomipop"> Suomipop</label>    
+        <label><input type="checkbox" value="Tribal"> Tribal</label>
+			</div>
+			</fieldset>
+			<fieldset class="middle">
+			<legend class="subtitle">GENRE</legend>
+			<label class="highlight"><em>Categorizes music into broader categories based on shared cultural or musical traits. </em></label>
+			<div class="item-group">			
+        <label><i>Country</i></label>
+        <label><input type="checkbox" value="Appalachian"> Appalachian</label>        
+        <label><input type="checkbox" value="Bluegrass"> Bluegrass</label>
+        <label><input type="checkbox" value="Country"> Country</label>
+        <label><input type="checkbox" value="Folk"> Folk</label>
+        <label><input type="checkbox" value="Freak Folk"> Freak Folk</label>
+        <label><input type="checkbox" value=" Western">  Western</label>   
+        <br><label><i>Dance</i></label>
+        <label><input type="checkbox" value="Afro-Cuban"> Afro-Cuban</label>        
+        <label><input type="checkbox" value="Dance Pop"> Dance Pop</label>
+        <label><input type="checkbox" value="Disco"> Disco</label>
+        <label><input type="checkbox" value="Dubstep"> Dubstep</label>
+        <label><input type="checkbox" value="Disco Funk"> Disco Funk</label>
+        <label><input type="checkbox" value="EDM"> EDM</label>      
+        <label><input type="checkbox" value="Electro"> Electro</label>        
+        <label><input type="checkbox" value="High-NRG"> High-NRG</label>
+        <label><input type="checkbox" value="House"> House</label>
+        <label><input type="checkbox" value="Trance"> Trance</label>
+        <label><input type="checkbox" value="Downtempo"> Downtempo</label>
+        <label><input type="checkbox" value="Synthwave"> Synthwave</label>                 
+        <label><input type="checkbox" value="Trap"> Trap</label>        
+        <br><label><i>Electronic</i></label>  
+        <label><input type="checkbox" value="Cyberpunk"> Cyberpunk</label>        
+        <label><input type="checkbox" value="Drum’n’bass"> Drum’n’bass</label>
+        <label><input type="checkbox" value="Electronic"> Electronic</label>
+        <label><input type="checkbox" value="Hypnogogical"> Hypnogogical</label>
+        <label><input type="checkbox" value="IDM"> IDM</label>
+        <label><input type="checkbox" value="Phonk"> Phonk</label>      
+        <label><input type="checkbox" value="Synthpop"> Synthpop</label>        
+        <label><input type="checkbox" value="Techno"> Techno</label>       
+        <br><label><i>Jazz/Soul</i></label>     
+        <label><input type="checkbox" value="Bebop"> Bebop</label>
+        <label><input type="checkbox" value="Gospel"> Gospel</label>
+        <label><input type="checkbox" value="Frutiger Aero"> Frutiger Aero</label>
+        <label><input type="checkbox" value="Jazz"> Jazz</label> 
+        <label><input type="checkbox" value="Latin Jazz"> Latin Jazz</label>
+        <label><input type="checkbox" value="RnB"> RnB</label>
+        <label><input type="checkbox" value="Soul"> Soul</label>          
+        <br><label><i>Latin</i></label>      
+        <label><input type="checkbox" value="Bossa Nova"> Bossa Nova</label>
+        <label><input type="checkbox" value="Forró"> Forró</label> 
+        <label><input type="checkbox" value="Mambo"> Mambo</label>
+        <label><input type="checkbox" value="Salsa"> Salsa</label>
+        <label><input type="checkbox" value="Tango"> Tango</label>
+        <br><label><i>Reggae</i></label>      
+        <label><input type="checkbox" value="Afrobeat"> Afrobeat</label>
+        <label><input type="checkbox" value="Dancehall"> Dancehall</label> 
+        <label><input type="checkbox" value="Dub"> Dub</label>
+        <label><input type="checkbox" value="Reggae"> Reggae</label>
+        <label><input type="checkbox" value="Reggaeton"> Reggaeton</label>            
+        <br><label><i>Metal</i></label>      
+        <label><input type="checkbox" value="Black Metal"> Black Metal</label>
+        <label><input type="checkbox" value="Deathcore"> Deathcore</label> 
+        <label><input type="checkbox" value="Death Metal"> Death Metal</label>
+        <label><input type="checkbox" value="Heavy Metal"> Heavy Metal</label>
+        <label><input type="checkbox" value="Heavy Metal Trap"> Heavy Metal Trap</label>
+        <label><input type="checkbox" value="Metalcore"> Metalcore</label>
+        <label><input type="checkbox" value="Nu Metal"> Nu Metal</label>
+        <label><input type="checkbox" value="Power Metal"> Power Metal</label>               
+        <br><label><i>Popular</i></label>      
+        <label><input type="checkbox" value="Pop"> Pop</label>
+        <label><input type="checkbox" value="Dance Pop"> Dance Pop</label> 
+        <label><input type="checkbox" value="Pop Rock"> Pop Rock</label>
+        <label><input type="checkbox" value="Kpop"> Kpop</label>
+        <label><input type="checkbox" value="Jpop"> Jpop</label>          
+        <br><label><i>Rock</i></label>      
+        <label><input type="checkbox" value="Classic Rock"> Classic Rock</label>
+        <label><input type="checkbox" value="Blues Rock"> Blues Rock</label> 
+        <label><input type="checkbox" value="Emo"> Emo</label>
+        <label><input type="checkbox" value="Glam Rock"> Glam Rock</label>
+        <label><input type="checkbox" value="Hardcore Punk"> Hardcore Punk</label>
+        <label><input type="checkbox" value="Indie"> Indie</label>
+        <label><input type="checkbox" value="Industrial Rock"> Industrial Rock</label>
+        <label><input type="checkbox" value="Punk"> Punk</label>  
+        <label><input type="checkbox" value="Rock"> Rock</label>
+        <label><input type="checkbox" value="Skate Rock"> Skate Rock</label>
+        <label><input type="checkbox" value="Skatecore"> Skatecore</label>        
+        <br><label><i>Urban</i></label>      
+        <label><input type="checkbox" value="Funk"> Funk</label>
+        <label><input type="checkbox" value="HipHop"> HipHop</label>
+        <label><input type="checkbox" value="Phonk"> Phonk</label>  
+        <label><input type="checkbox" value="Rap"> Rap</label>  
+			</div>
+			</fieldset>	
+			<fieldset class="right">
+			<legend class="subtitle">TYPE</legend>
+			<label class="highlight"><em>This categorization reflects how the music might be used or the setting it is intended for.</em></label>	
+			<div class="item-group">			
+        <label><i>Background</i></label>             
+        <label><input type="checkbox" value="Elevator"> Elevator</label>
+        <label><input type="checkbox" value="Jingle"> Jingle</label>
+        <label><input type="checkbox" value="Muzak"> Muzak</label><br>         
+        <label><i>Call to Prayer</i></label>             
+        <label><input type="checkbox" value="Adan"> Adan</label>
+        <label><input type="checkbox" value="Adjan"> Adjan</label>
+        <label><input type="checkbox" value="Call to Prayer"> Call to Prayer</label>   
+        <label><input type="checkbox" value="Gregorian Chant"> Gregorian Chant</label><br>                
+        <label><i>Character</i></label>             
+        <label><input type="checkbox" value="I Want Song"> I Want Song</label>
+        <label><input type="checkbox" value="Hero Theme"> Hero Theme</label>
+        <label><input type="checkbox" value="Strut"> Strut</label>   
+        <label><input type="checkbox" value="March"> March</label>       
+        <label><input type="checkbox" value="Military"> Military</label>   
+        <label><input type="checkbox" value="Villain Theme"> Villain Theme</label><br>                 
+        <label><i>Children</i></label>             
+        <label><input type="checkbox" value="Lullaby"> Lullaby</label>
+        <label><input type="checkbox" value="Nursery Rhyme"> Nursery Rhyme</label>
+        <label><input type="checkbox" value="Sing-along"> Sing-along</label>   
+        <label><input type="checkbox" value="Toddler"> Toddler</label><br>           
+        <label><i>Composer</i></label>             
+        <label><input type="checkbox" value="Adagio"> Adagio</label>
+        <label><input type="checkbox" value="Adjunct"> Adjunct</label>
+        <label><input type="checkbox" value="Andante"> Andante</label>   
+        <label><input type="checkbox" value="Allegro"> Allegro</label>  
+        <label><input type="checkbox" value="Capriccio"> Capriccio</label><br>                   
+        <label><i>Instruments</i></label>             
+        <label><input type="checkbox" value="Acoustic Guitar"> Acoustic Guitar</label>
+        <label><input type="checkbox" value="Bass"> Bass</label>
+        <label><input type="checkbox" value="Doublebass"> Doublebass</label>   
+        <label><input type="checkbox" value="Electricbass"> Electricbass</label>       
+        <label><input type="checkbox" value="Electric Guitar"> Electric Guitar</label>   
+        <label><input type="checkbox" value="Fingerstyle Guitar"> Fingerstyle Guitar</label>       
+        <label><input type="checkbox" value="Percussion"> Percussion</label><br>             
+        <label><i>Noise</i></label>             
+        <label><input type="checkbox" value="Chaotic"> Chaotic</label>
+        <label><input type="checkbox" value="Distorted"> Distorted</label>
+        <label><input type="checkbox" value="Glitch"> Glitch</label>   
+        <label><input type="checkbox" value="Noise"> Noise</label>       
+        <label><input type="checkbox" value="Stuttering"> Stuttering</label><br>    
+        <label><i>Orchestral</i></label>             
+        <label><input type="checkbox" value="Glissando Trombone"> Glissando Trombone</label>
+        <label><input type="checkbox" value="Legato Cello"> Legato Cello</label>
+        <label><input type="checkbox" value="Orchestral"> Orchestral</label>   
+        <label><input type="checkbox" value="Spiccato Violins"> Spiccato Violins</label>       
+        <label><input type="checkbox" value="Staccato Viola"> Staccato Viola</label>   
+        <label><input type="checkbox" value="Symphonic"> Symphonic</label><br>             
+        <label><i>Retro</i></label>             
+        <label><input type="checkbox" value="1960s"> 1960s</label>
+        <label><input type="checkbox" value="Barbershop"> Barbershop</label>
+        <label><input type="checkbox" value="Big Band"> Big Band</label>   
+        <label><input type="checkbox" value="Classic"> Classic</label>       
+        <label><input type="checkbox" value="Doo Wop"> Doo Wop</label>   
+        <label><input type="checkbox" value="Girl Group"> Girl Group</label>      
+        <label><input type="checkbox" value="Salooncore"> Salooncore</label>       
+        <label><input type="checkbox" value="Swing"> Swing</label><br>            
+        <label><i>Traditional</i></label>             
+        <label><input type="checkbox" value="Suffix"> Suffix</label>
+        <label><input type="checkbox" value="…core"> …core</label>
+        <label><input type="checkbox" value="…jam"> …jam</label>   
+        <label><input type="checkbox" value="…out"> …out</label>       
+        <label><input type="checkbox" value="…wave"> …wave</label>   
+        <label><input type="checkbox" value="Traditional"> Traditional</label>      
+        <label><input type="checkbox" value="Americana"> Americana</label>       
+        <label><input type="checkbox" value="Christmas Carol"> Christmas Carol</label><br>               
+        <label><i>Voice</i></label>             
+        <label><input type="checkbox" value="A Cappella"> A Cappella</label>
+        <label><input type="checkbox" value="Arabian Ornamental"> Arabian Ornamental</label>
+        <label><input type="checkbox" value="Dispassionate"> Dispassionate</label>   
+        <label><input type="checkbox" value="Hindustani"> Hindustani</label>       
+        <label><input type="checkbox" value="Lounge Singer"> Lounge Singer</label>   
+        <label><input type="checkbox" value="Melismatic"> Melismatic</label>      
+        <label><input type="checkbox" value="Monotone"> Monotone</label>       
+        <label><input type="checkbox" value="Narration"> Narration</label>   
+        <label><input type="checkbox" value="Resonant"> Resonant</label>  
+        <label><input type="checkbox" value="Spoken Word"> Spoken Word</label>      
+        <label><input type="checkbox" value="Sprechgesang"> Sprechgesang</label>   
+        <label><input type="checkbox" value="Sultry"> Sultry</label>       
+        <label><input type="checkbox" value="Torchy"> Torchy</label>   
+        <label><input type="checkbox" value="Vocaloid"> Vocaloid</label>  
+			</div>
+			</fieldset>	
+			<div class="white-space"></div>
+			<div class="button-group">
+				<button type="button" id="printButton">Generate Prompt</button>
+				<button type="button" id="copyButton">Copy</button>
+				<button type="button" id="resetButton">Reset</button>
+			</div>
+			<textarea class="code-block" id="resultBox" readonly placeholder="Your prompt will appear here.."></textarea>
+		</form>
+
+		<script>
+			// Function to display checked items in the input box
+			document.getElementById('printButton').addEventListener('click', () => {
+				const checkboxes = document.querySelectorAll('#itemForm input[type="checkbox"]:checked');
+				const checkedItems = Array.from(checkboxes).map(checkbox => checkbox.value);
+				const resultBox = document.getElementById('resultBox');
+				resultBox.value = checkedItems.length
+					? checkedItems.join(', ')
+					: 'No items selected.';
+			});
+
+			// Function to copy the content of the result box
+			document.getElementById('copyButton').addEventListener('click', () => {
+				const resultBox = document.getElementById('resultBox');
+				resultBox.select();
+				resultBox.setSelectionRange(0, 99999); // For mobile compatibility
+				document.execCommand('copy');
+				alert('Result copied to clipboard!');
+			});
+
+			// Function to reset all checkboxes
+			document.getElementById('resetButton').addEventListener('click', () => {
+				const checkboxes = document.querySelectorAll('#itemForm input[type="checkbox"]');
+				checkboxes.forEach(checkbox => checkbox.checked = false);
+				
+				const resultBox = document.getElementById('resultBox');
+				resultBox.value = ''; // Clear the result box
+			});
+			
+		</script>
+		</main>
+	</body>
+</html>
 
