@@ -14,9 +14,20 @@
         body {
 			background-color: #2A174A;
 			font-family: 'Roboto', sans-serif;
-			font-size: 16px; /* Base font size */
+			font-size: 16px; /* fontsize in pixel 16px*/
 			line-height: 1.5; /* Ensures good readability */			
         }
+			@media (max-width: 768px) { /* For tablets and smaller screens */
+				body {
+					font-size: 14px;
+				}
+			}
+
+			@media (max-width: 480px) { /* For smartphones */
+				body {
+					font-size: 12px;
+				}
+			}		
 		main {
 			max-width: 800px; 
             margin: 25px auto;
@@ -45,11 +56,24 @@
 			display: inline-block;
 			vertical-align: top; /* Align fieldsets by their top edges */
 		}
+					@media (max-width: 480px) { /* For smartphones */
+				.left, .middle, .right {
+					width: 40%;
+				}
+			}
 		h1 {
 			text-align: center;
-			font-size: 60px;
+			font-size: 80px; /* fontsize in pixel 60px*/
 			line-height: 0.80;
 		}
+			@media (max-width: 768px) { /* For tablets and smaller screens */
+			
+			}		
+			@media (max-width: 480px) { /* For smartphones */
+				h1 {
+					font-size: 60px;
+				}
+			}
         h2 {
             color: #333;
         }
@@ -97,12 +121,24 @@
 			word-wrap: break-word; /* Allow words to break and wrap to the next line */
 			white-space: pre-wrap; /* Preserve spaces and allow wrapping */
 			min-height: 50px;
-			resize: none;
-		}		
+			
+		}
+					@media (max-width: 768px) { /* For smartphones */
+				.code-block {
+					width: 33%;
+				}
+			}	
+					@media (max-width: 480px) { /* For smartphones */
+				.code-block {
+					width: 68%;
+				}
+			}		
 		.white-space{
 		display: block;
 		height: 20px;
 		}
+		
+		textarea {resize: none;}
 		
     </style>
 </head>
@@ -424,4 +460,3 @@
 		</main>
 	</body>
 </html>
-
